@@ -236,6 +236,16 @@ body { font-family: var(--font-sans); background: var(--ink); -webkit-font-smoot
 
 .menu-link { font-size: clamp(36px, 6vw, 88px); font-weight: 500; letter-spacing: -0.04em; line-height: 1.02; transition: color .3s, padding .5s var(--ease-out); color: oklch(1 0 0 / 35%); }
 .menu-link:hover { color: var(--paper); padding-left: 24px; }
+.menu-btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: 14px; height: 44px; padding: 0 8px 0 20px; border: 1px solid oklch(1 0 0 / 22%); border-radius: 999px; color: var(--paper); background: oklch(1 0 0 / 4%); backdrop-filter: blur(10px); transition: color .45s var(--ease-out), border-color .45s, box-shadow .45s; }
+.menu-btn-fill { position: absolute; inset: 0; z-index: -1; background: var(--paper); border-radius: inherit; transform: translateY(101%); transition: transform .55s var(--ease-out); }
+.menu-btn:hover { color: var(--ink); border-color: var(--paper); box-shadow: 0 0 32px -6px oklch(1 0 0 / 45%); }
+.menu-btn:hover .menu-btn-fill { transform: translateY(0); }
+.menu-btn-icon { display: grid; place-items: center; gap: 5px; width: 30px; height: 30px; border-radius: 999px; background: var(--paper); transition: background .45s, transform .55s var(--ease-out); }
+.menu-btn-icon span { display: block; height: 1.5px; width: 12px; background: var(--ink); transition: width .4s var(--ease-out), background .45s; }
+.menu-btn-icon span:last-child { width: 7px; justify-self: end; margin-right: 9px; }
+.menu-btn:hover .menu-btn-icon { background: var(--ink); transform: rotate(180deg); }
+.menu-btn:hover .menu-btn-icon span { background: var(--paper); width: 12px; margin-right: 0; }
+@media (max-width: 639px) { .menu-btn { padding: 0 6px; } }
 
 .footer-mark { font-family: var(--font-brand); font-weight: 900; font-size: clamp(48px, 13vw, 240px); line-height: .8; letter-spacing: -0.02em; color: transparent; -webkit-text-stroke: 1px oklch(1 0 0 / 30%); transition: color .6s; }
 .footer-mark:hover { color: var(--paper); }
