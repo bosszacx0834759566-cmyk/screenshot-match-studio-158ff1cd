@@ -127,7 +127,7 @@ function Index() {
               <Dialog.Portal>
                 <Dialog.Overlay className="fixed inset-0 z-[60] bg-ink" />
                 <Dialog.Content aria-describedby={undefined} className="site-container fixed inset-0 z-[61] flex max-w-none flex-col overflow-y-auto bg-ink pb-8 pt-6 text-paper">
-                  <div className="flex h-14 items-center justify-between"><Dialog.Title className="brand flex items-center gap-3 text-xs font-bold"><Logo className="h-7 w-7" />GODHEIMER</Dialog.Title><Dialog.Close className="menu-btn close-btn mono" aria-label="Close menu"><span className="menu-btn-fill" /><span className="hidden sm:inline"><Scramble text="Close" /></span><span className="close-btn-icon"><X className="h-4 w-4" strokeWidth={2.25} /></span></Dialog.Close></div>
+                  <div className="flex h-14 items-center justify-between"><Dialog.Title className="brand flex items-center gap-3 text-xs font-bold"><Logo className="h-7 w-7" />GODHEIMER</Dialog.Title><Dialog.Close className="menu-btn close-btn mono" aria-label="Close menu"><span className="menu-btn-fill" /><span className="close-btn-label hidden sm:inline-block"><Scramble text="Close" /></span><span className="close-btn-icon"><X className="h-4 w-4" strokeWidth={2.25} /></span></Dialog.Close></div>
                   <nav aria-label="Section navigation" className="my-auto flex flex-col py-16">
                     {nav.map(([l, id], i) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)} className="menu-link flex items-baseline gap-6 border-b border-line-dark py-3"><span className="mono text-paper/40">0{i + 1}</span><Scramble text={l} /></a>)}
                   </nav>
