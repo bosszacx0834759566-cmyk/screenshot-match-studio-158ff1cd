@@ -248,8 +248,15 @@ body { font-family: var(--font-sans); background: var(--ink); -webkit-font-smoot
 .menu-btn:hover .menu-btn-icon span { background: var(--paper); }
 .menu-btn:hover .menu-btn-icon span:first-child { transform: translateX(-2px); }
 .menu-btn:hover .menu-btn-icon span:last-child { transform: translateX(2px); }
-.close-btn-icon { display: flex; flex: none; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 999px; background: var(--paper); color: var(--ink); transition: background .45s, color .45s, transform .6s var(--ease-out); }
-.close-btn:hover .close-btn-icon { background: var(--ink); color: var(--paper); transform: rotate(90deg); }
+.close-btn { perspective: 700px; }
+.close-btn-label { transform-origin: 50% 100%; transition: transform .7s var(--ease-out); }
+.close-btn:hover .close-btn-label { transform: translateY(-2px) rotateX(22deg); }
+.close-btn-icon { position: relative; display: flex; flex: none; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 999px; background: var(--paper); color: var(--ink); transition: background .45s, color .45s, transform .95s cubic-bezier(.34,1.45,.5,1); }
+.close-btn-icon::after { content: ""; position: absolute; inset: -4px; border-radius: 999px; border: 1px dashed oklch(0 0 0 / 30%); opacity: 0; transition: opacity .4s var(--ease-out); }
+.close-btn-icon svg { transition: transform .95s cubic-bezier(.34,1.45,.5,1); }
+.close-btn:hover .close-btn-icon { background: var(--ink); color: var(--paper); transform: rotate(360deg) scale(1.12); }
+.close-btn:hover .close-btn-icon::after { opacity: 1; animation: spin 3.4s linear infinite; }
+.close-btn:hover .close-btn-icon svg { transform: rotate(-180deg) scale(.84); }
 @media (max-width: 639px) { .menu-btn { padding: 0 6px; } }
 
 .footer-mark { font-family: var(--font-brand); font-weight: 900; font-size: clamp(48px, 13vw, 240px); line-height: .8; letter-spacing: -0.02em; color: transparent; -webkit-text-stroke: 1px oklch(1 0 0 / 30%); transition: color .6s; }
